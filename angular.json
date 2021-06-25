@@ -24,7 +24,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css",
+              "assets/css/skins/skin-demo-4.css",
+              "src/assets/css/demos/demo-4.css",
+              "src/assets/css/style.css"
             ],
             "scripts": []
           },

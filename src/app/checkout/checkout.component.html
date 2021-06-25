@@ -97,26 +97,20 @@
 		                					</thead>
 
 		                					<tbody>
-		                						<tr>
-		                							<td><a href="#">Beige knitted elastic runner shoes</a></td>
-		                							<td>$84.00</td>
+		                						<tr *ngFor="let product of cartProducts">
+		                							<td><a href="#">{{product.name}} <br><strong><span class="text-success"><small>( X {{product.qty}})</small></span></strong></a></td>
+		                							<td>$ {{math.round(product.price*product.qty)}}</td>
 		                						</tr>
 
-		                						<tr>
-		                							<td><a href="#">Blue utility pinafore denimdress</a></td>
-		                							<td>$76,00</td>
-		                						</tr>
+		                						
 		                						<tr class="summary-subtotal">
 		                							<td>Subtotal:</td>
-		                							<td>$160.00</td>
+		                							<td>${{subTotal}}</td>
 		                						</tr><!-- End .summary-subtotal -->
-		                						<tr>
-		                							<td>Shipping:</td>
-		                							<td>Free shipping</td>
-		                						</tr>
+		                					
 		                						<tr class="summary-total">
 		                							<td>Total:</td>
-		                							<td>$160.00</td>
+		                							<td>{{subTotal}}</td>
 		                						</tr><!-- End .summary-total -->
 		                					</tbody>
 		                				</table><!-- End .table table-summary -->

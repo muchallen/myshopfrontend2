@@ -10,6 +10,13 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.changeNavLink();
   }
 
+    //change nav links active class
+  private changeNavLink(){
+    let navs = document.querySelectorAll(".navs");
+    navs.forEach(nav=>nav.classList.remove("active"))
+    document.querySelector("#navsHome").classList.add("active")
+  }
 }

@@ -106,48 +106,29 @@
                             <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                                 <div class="icon">
                                     <i class="icon-shopping-cart"></i>
-                                    <span class="cart-count">2</span>
+                                    <span class="cart-count">{{cartNumber}}</span>
                                 </div>
                                 <p>Cart</p>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right">
                                 <div class="dropdown-cart-products">
-                                    <div class="product">
+                                   
+                                    <div *ngFor="let product of cartProducts" class="product">
                                         <div class="product-cart-details">
                                             <h4 class="product-title">
-                                                <a href="product.html">Beige knitted elastic runner shoes</a>
+                                                <a href="product.html">{{product.name}}</a>
                                             </h4>
 
                                             <span class="cart-product-info">
-                                                <span class="cart-product-qty">1</span>
-                                                x $84.00
+                                                <span class="cart-product-qty">{{product.qty}}</span>
+                                                x {{product.price}}
                                             </span>
                                         </div><!-- End .product-cart-details -->
 
                                         <figure class="product-image-container">
                                             <a href="product.html" class="product-image">
-                                                <img src="assets/images/products/cart/product-1.jpg" alt="product">
-                                            </a>
-                                        </figure>
-                                        <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
-                                    </div><!-- End .product -->
-
-                                    <div class="product">
-                                        <div class="product-cart-details">
-                                            <h4 class="product-title">
-                                                <a href="product.html">Blue utility pinafore denim dress</a>
-                                            </h4>
-
-                                            <span class="cart-product-info">
-                                                <span class="cart-product-qty">1</span>
-                                                x $76.00
-                                            </span>
-                                        </div><!-- End .product-cart-details -->
-
-                                        <figure class="product-image-container">
-                                            <a href="product.html" class="product-image">
-                                                <img src="assets/images/products/cart/product-2.jpg" alt="product">
+                                                <img src="assets/images/products/elements/{{product.image}}" alt="product">
                                             </a>
                                         </figure>
                                         <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
@@ -201,11 +182,11 @@
                     <div class="header-center mx-auto">
                         <nav class="main-nav">
                             <ul class="menu sf-arrows">
-                                <li class=" active">
-                                    <a routerLink="/" class="">Home</a>
+                                <li id="navsHome"  class=" active navs">
+                                    <a href="#"routerLink="/" class="">Home</a>
                                 </li>
-                                <li>
-                                    <a routerLink="/shop"class="sf-with-ul">Shop</a>
+                                <li id="navsShop" class="navs">
+                                    <a routerLink="/shop"class="sf-with-ul ">Shop</a>
 
                                     <div class="megamenu megamenu-md">
                                         <div class="row no-gutters">
@@ -259,10 +240,10 @@
                                         </div><!-- End .row -->
                                     </div><!-- End .megamenu megamenu-md -->
                                 </li>
-                                <li>
-                                    <a routerLink="/cart" >Shoping Cart</a>
+                                <li id="navsCart" class="navs">
+                                    <a routerLink="/cart"  >Shoping Cart</a>
                                 </li>
-                                <li>
+                                <li id="navsCheckout" class="navs">
                                     <a routerLink="/checkout" >Checkout</a>
                                 </li>
                                
