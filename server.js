@@ -6,7 +6,7 @@ var cors = require('cors')
 const app = express();
 
 app.use(cors({
-  origin: '*'
+  origin: 'https://centric-shop-backend.herokuapp.com'
 }));
 
 
@@ -30,7 +30,7 @@ const upload = multer({ storage: storage });
 
 app.use('/ftp', express.static('public'));
 
-app.post('/uploadImage', cors(corsOptions), upload.single('file'), function(req,res) {
+app.post('/uploadImage', upload.single('file'), function(req,res) {
   console.log(req.file);
   console.log('storage location is ', req.hostname +'/' + req.file.path);
   res.send({name:req.file.filename});
