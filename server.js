@@ -6,7 +6,7 @@ var cors = require('cors')
 const app = express();
 
 app.use(cors({
-  origin: 'https://centric-shop-backend.herokuapp.com'
+  origin: '*'
 }));
 
 
