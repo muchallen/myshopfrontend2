@@ -9,9 +9,11 @@ import { ThrowStmt } from '@angular/compiler';
   providedIn: 'root'
 })
 export class ShopserviceService {
-  private apiServer = 'http://localhost:8081';
+  private apiServer = 
   
-  //'https://centric-shop-backend.herokuapp.com'
+  //'http://localhost:8081';
+  
+  'https://centric-shop-backend.herokuapp.com'
   public cartProducts:Cart[]=[]
   public subTotal;
 
