@@ -1,11 +1,15 @@
+const express = require('express')
+const app = express();
 
 module.exports = (req,res) => {
  // Install express server with
-
 // const path = require('path');
 // const multer = require('multer');
 // var cors = require('cors')
 
+app.get('/hello', (req,res)=>{
+res.send("hello allen")
+})
 
 // app.use(cors({
 //   origin: '*'
@@ -38,6 +42,7 @@ module.exports = (req,res) => {
 //   res.send({name:req.file.filename});
 //   return
 // })
+
 
  
  
