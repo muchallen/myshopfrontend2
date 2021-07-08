@@ -6,12 +6,12 @@ var cors = require('cors')
 const app = express();
 
 app.use(cors())
+var corsOptions = {
+  origin: 'https://centric-shop-backend.herokuapp.com',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+
 
 var storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -32,7 +32,7 @@ const upload = multer({ storage: storage });
 
 app.use('/ftp', express.static('public'));
 
-app.post('/uploadImage', upload.single('file'), function(req,res) {
+app.post('/uploadImage', cors(corsOptions), upload.single('file'), function(req,res) {
   console.log(req.file);
   console.log('storage location is ', req.hostname +'/' + req.file.path);
   res.send({name:req.file.filename});
