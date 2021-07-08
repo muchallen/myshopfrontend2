@@ -33,7 +33,7 @@ app.post('/uploadImage', upload.single('file'), function(req,res) {
   return
 })
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4200;
 app.listen(port, () => {
     console.log('Server is up and running on port ', port);
 })
