@@ -23,7 +23,7 @@ app.use(express.static(__dirname + '/dist/myshop'));
 //app.use(express.static('public'));
 const upload = multer({ storage: storage });
 
-app.use('/ftp', express.static('public'), serveIndex('public', {'icons': true}));
+app.use('/ftp', express.static('public'));
 
 app.post('/uploadImage', upload.single('file'), function(req,res) {
   console.log(req.file);
