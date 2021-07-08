@@ -2,7 +2,6 @@
 module.exports = (req,res) => {
     // Install express server with
 const express = require('express')
-const path = require('path');
 const multer = require('multer');
 var cors = require('cors')
 const app = express();
