@@ -1,11 +1,11 @@
 
 module.exports = (req,res) => {
  // Install express server with
-const express = require('express')
+
 // const path = require('path');
 // const multer = require('multer');
 // var cors = require('cors')
-const app = express();
+
 
 // app.use(cors({
 //   origin: '*'
@@ -39,17 +39,11 @@ const app = express();
 //   return
 // })
 
-const port = process.env.PORT || 4200;
-app.listen(port, () => {
-    console.log('Server is up and running on port ', port);
-})
-
-
  
  
-app.get('/hie', function(req,res) {
+
   res.send('hie allen')
-});
+
 
 
   };
