@@ -1,7 +1,8 @@
 
 module.exports = (req,res) => {
-    // Install express server with
+ // Install express server with
 const express = require('express')
+const path = require('path');
 const multer = require('multer');
 var cors = require('cors')
 const app = express();
@@ -9,6 +10,8 @@ const app = express();
 app.use(cors({
   origin: '*'
 }));
+
+
 
 var storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -21,11 +24,32 @@ var storage = multer.diskStorage({
 
 app.use(express.urlencoded({ extended: false }));
 
+// Serve only the static files form the dist directory
+// Replace the '/dist/<to_your_project_name>'
+app.use(express.static(__dirname + '/dist/myshop'));
+//app.use(express.static('public'));
 const upload = multer({ storage: storage });
 
+app.use('/ftp', express.static('public'));
+
+app.post('/uploadImage', upload.single('file'), function(req,res) {
   console.log(req.file);
   console.log('storage location is ', req.hostname +'/' + req.file.path);
   res.send({name:req.file.filename});
   return
+})
+
+const port = process.env.PORT || 4200;
+app.listen(port, () => {
+    console.log('Server is up and running on port ', port);
+})
+
+
+ 
+ 
+app.get('/hie', function(req,res) {
+  res.send('hie allen')
+});
+
 
   };
