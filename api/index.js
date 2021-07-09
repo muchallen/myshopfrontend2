@@ -13,7 +13,7 @@ app.use(cors({
 
 var storage = multer.diskStorage({
   destination: (req, file, cb) => {
-      cb(null, './assets/images/productsimages')
+      cb(null, __dirname)
   },
   filename: (req, file, cb) => {
       cb(null, '' + Date.now()+file.originalname)
