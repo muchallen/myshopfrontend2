@@ -30,12 +30,7 @@ const upload = multer({ storage: storage });
 
 // app.use('/ftp', express.static('public'));
 
-app.post('/api', upload.single('file'), function(req,res) {
-  console.log(req.file);
-  console.log('storage location is ', req.hostname +'/' + req.file.path);
-  res.send({name:req.file.filename});
-  return
-})
+
 
 // const port = process.env.PORT || 4200;
 // app.listen(port, () => {
@@ -52,6 +47,13 @@ app.get('/allen', function(req,res) {
 app.get('/api', function(req,res) {
   res.send('showing api')
 });
+
+app.post('/api', upload.single('file'), function(req,res) {
+  console.log(req.file);
+  console.log('storage location is ', req.hostname +'/' + req.file.path);
+  res.send({name:req.file.filename});
+  return
+})
 
 
 
