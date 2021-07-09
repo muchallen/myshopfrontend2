@@ -162,17 +162,8 @@
                             <div class="dropdown-menu">
                                 <nav class="side-nav">
                                     <ul class="menu-vertical sf-arrows">
-                                        <li class="item-lead"><a href="#">Daily offers</a></li>
-                                        <li class="item-lead"><a href="#">Gift Ideas</a></li>
-                                        <li><a href="">Computer & Laptop</a></li>
-                                        <li><a href="#">Digital Camera</a></li>
-                                        <li><a href="#">Smart Phones</a></li>
-                                        <li><a href="#">Televisions</a></li>
-                                        <li><a href="#">Audio Systems </a></li>
-                                        <li><a href="#">Smart Watches </a></li>
-                                        <li><a href="#">Printers & Scanners</a></li>
-                                        <li><a href="#">Video Game Consoles</a></li>
-                                        <li><a href="#"> Furniture </a></li>
+                                        <li *ngFor="let category of categories" class="item-lead"><a href="#"> {{category}}</a></li>
+                                        
                                     </ul><!-- End .menu-vertical -->
                                 </nav><!-- End .side-nav -->
                             </div><!-- End .dropdown-menu -->
@@ -186,15 +177,15 @@
                                     <a href="#"routerLink="/" class="">Home</a>
                                 </li>
                                 <li id="navsShop" class="navs">
-                                    <a routerLink="/shop"class="sf-with-ul ">Shop</a>
+                                    <a routerLink="/shop"class="">Shop</a>
 
-                                    <div class="megamenu megamenu-md">
+                                  <!---  <div class="megamenu megamenu-md">
                                         <div class="row no-gutters">
                                             <div class="col-md-8">
                                                 <div class="menu-col">
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <div class="menu-title">Computers & Laptop</div><!-- End .menu-title -->
+                                                            <div class="menu-title">Computers & Laptop</div>
                                                             <ul>
                                                                 <li><a href="category-list.html">Lenovo</a></li>
                                                                 <li><a href="category-2cols.html">HP </a></li>
@@ -203,7 +194,7 @@
                                                                 <li><a href="category-market.html"> Asus<span> <span class="tip tip-new">New</span></span></a></li>
                                                             </ul>
 
-                                                            <div class="menu-title">Smart Phones</div><!-- End .menu-title -->
+                                                            <div class="menu-title">Smart Phones</div>
                                                             <ul>
                                                                 <li><a href="category-boxed.html"><span>Iphone<span class="tip tip-hot">Hot</span></span></a></li>
                                                                 <li><a href="category-fullwidth.html">Samsung</a></li>
@@ -211,17 +202,16 @@
                                                                 <li><a href="category-fullwidth.html">HTC</a></li>
                                                                 <li><a href="category-fullwidth.html">Itel</a></li>
                                                             </ul>
-                                                        </div><!-- End .col-md-6 -->
+                                                        </div>
 
                                                         <div class="col-md-6">
-                                                            <div class="menu-title">Furniture</div><!-- End .menu-title -->
-                                                            <ul>
+                                                            <div class="menu-title">Furniture</div>
                                                                 <li><a href="product-category-boxed.html">Beds</a></li>
                                                                 <li><a href="product-category-fullwidth.html">Kitchen Interior</a></li>
                                                                 <li><a href="product-category-fullwidth.html">Sofas</a></li>
                                                                 <li><a href="product-category-fullwidth.html">All</a></li>
                                                             </ul>
-                                                            <div class="menu-title">Cars</div><!-- End .menu-title -->
+                                                            <div class="menu-title">Cars</div>
                                                             <ul>
                                                                 <li><a href="cart.html">Nissan</a></li>
                                                                 <li><a href="checkout.html">Mercedes Benz</a></li> 
@@ -229,16 +219,16 @@
                                                                 <li><a href="dashboard.html">Toyota</a></li>
                                                                 <li><a href="#">Range Rover</a></li>
                                                             </ul>
-                                                        </div><!-- End .col-md-6 -->
-                                                    </div><!-- End .row -->
-                                                </div><!-- End .menu-col -->
-                                            </div><!-- End .col-md-8 -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
                                             <div class="col-md-4">
                                               
-                                            </div><!-- End .col-md-4 -->
-                                        </div><!-- End .row -->
-                                    </div><!-- End .megamenu megamenu-md -->
+                                            </div>
+                                        </div>
+                                    </div>-->
                                 </li>
                                 <li id="navsCart" class="navs">
                                     <a routerLink="/cart"  >Shoping Cart</a>

@@ -1,0 +1,8 @@
+.category-item .custom-contro{
+    padding:  5px;
+    cursor: pointer;
+}
+.category-item :hover{
+    background-color:  #c96;   
+    color:white;
+}

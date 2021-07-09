@@ -13,6 +13,8 @@ export class ShopComponent implements OnInit {
   
   public products : Product[]
   public numbers : number[]=[1,3,5,7,8,9]
+  public categories:String[]=[]
+  public brands:String[]=[]
 
   constructor(private shopService: ShopserviceService,private main: AppComponent) { }
 
@@ -23,16 +25,47 @@ export class ShopComponent implements OnInit {
 
 
   //get all products
-  private getProducts():void {
+  public getProducts(): void{
     this.shopService.getAllProducts().subscribe(
       (res:Product[])=>{
-        this.products = res 
+          this.products = res;
+          console.log(this.products);
+          this.getProductsCategory();
+          this.getProductsBrand()
       },
-      (err:HttpErrorResponse)=>{
-        
-        console.log(err)
+      (error:HttpErrorResponse)=>{
+        console.log(error)
       }
     )
+      
+  }
+  private getProductsCategory () : void {
+
+    
+     getp: for(var x=0 ; x<this.products.length ;x++){
+      
+      var cat = this.categories.filter(category=>category==this.products[x].category)
+      if(cat.length==0){
+        this.categories.push(this.products[x].category);
+      }
+      if(this.categories.length==6){
+        break getp; 
+      }
+    }
+   
+  }
+
+  private getProductsBrand () : void {
+    getp: for(var x=0 ; x<this.products.length ;x++){
+      
+      var brand = this.brands.filter(item=>item==this.products[x].type)
+      if(brand.length==0){
+        this.brands.push(this.products[x].type);
+      }
+      if(this.brands.length==6){
+        break getp; 
+      }
+    }
   }
 
   //change nav links active class
