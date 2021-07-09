@@ -11,9 +11,9 @@ import { ThrowStmt } from '@angular/compiler';
 export class ShopserviceService {
   private apiServer = 
   
-  //'http://localhost:8081';
+ // 'http://localhost:8081';
   
-  'https://centric-shop-backend.herokuapp.com'
+   'https://centric-shop-backend.herokuapp.com'
   public cartProducts:Cart[]=[]
   public subTotal;
 
@@ -67,6 +67,8 @@ export class ShopserviceService {
     })
     this.subTotal=Math.round(sum*100)/100;
   }
+
+  
   
 
 
