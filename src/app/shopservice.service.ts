@@ -11,7 +11,7 @@ import { ThrowStmt } from '@angular/compiler';
 export class ShopserviceService {
   private apiServer = 
   
- // 'http://localhost:8081';
+  //'http://localhost:8082';
   
    'https://centric-shop-backend.herokuapp.com'
   public cartProducts:Cart[]=[]
