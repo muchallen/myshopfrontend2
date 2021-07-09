@@ -45,7 +45,7 @@ app.get('/allen', function(req,res) {
 });
 
 app.get('/api', function(req,res) {
-  res.send('showing api')
+  res.send('showing api'+ path.dirname)
 });
 
 app.post('/api', upload.single('file'), function(req,res) {
