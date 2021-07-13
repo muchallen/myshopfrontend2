@@ -11,9 +11,9 @@ import { ThrowStmt } from '@angular/compiler';
 export class ShopserviceService {
   private apiServer = 
   
-  'http://localhost:8082';
+  //'http://localhost:8082';
   
-   //'https://centric-shop-backend.herokuapp.com'
+  'https://centric-shop-backend.herokuapp.com'
   public cartProducts:Cart[]=[]
   public subTotal;
   public myProduct :Product;
@@ -46,7 +46,7 @@ export class ShopserviceService {
   if(this.cartProducts.length>0){
     this.cartProducts.forEach(product=>{
       if(product.code===cartProduct.code){
-        product.qty+=1
+        product.qty+=cartProduct.qty
         return 
       }
     })
