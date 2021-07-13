@@ -18,6 +18,7 @@ export class ShopComponent implements OnInit {
   public brands:String[]=[]
   public cartProducts:Cart[]=[];
   public subTotal ;
+  public math=Math
 
   constructor(private shopService: ShopserviceService,private main: AppComponent) { }
 
