@@ -11,7 +11,9 @@ import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { SliderComponent } from './slider/slider.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {AddProductsComponent} from './add-products/add-products.component'
+import {AddProductsComponent} from './add-products/add-products.component';
+import { SingleProductComponent } from './single-product/single-product.component'
+
 
 
 
@@ -24,7 +26,9 @@ import {AddProductsComponent} from './add-products/add-products.component'
     CartComponent,
     CheckoutComponent,
     SliderComponent,
-    AddProductsComponent
+    AddProductsComponent,
+    SingleProductComponent,
+    
 
   ],
   imports: [

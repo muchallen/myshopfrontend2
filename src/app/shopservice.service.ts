@@ -16,6 +16,7 @@ export class ShopserviceService {
    'https://centric-shop-backend.herokuapp.com'
   public cartProducts:Cart[]=[]
   public subTotal;
+  public myProduct :Product;
 
   constructor(private http: HttpClient) { }
 

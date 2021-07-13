@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../Product';
 import {AppComponent} from '../app.component'
 import { ShopserviceService } from '../shopservice.service';
+import { Cart } from '../Cart';
 
 @Component({
   selector: 'app-shop',
@@ -15,23 +16,26 @@ export class ShopComponent implements OnInit {
   public numbers : number[]=[1,3,5,7,8,9]
   public categories:String[]=[]
   public brands:String[]=[]
+  public cartProducts:Cart[]=[];
+  public subTotal ;
 
   constructor(private shopService: ShopserviceService,private main: AppComponent) { }
 
   ngOnInit(): void {
-      this.getProducts()
+      this.getProducts(function(){})
       this.changeNavLink()  
   }
 
 
   //get all products
-  public getProducts(): void{
+  public getProducts(callb){
     this.shopService.getAllProducts().subscribe(
       (res:Product[])=>{
           this.products = res;
           console.log(this.products);
           this.getProductsCategory();
           this.getProductsBrand()
+          callb(this.products);
       },
       (error:HttpErrorResponse)=>{
         console.log(error)
@@ -81,6 +85,43 @@ this.shopService.addToCart(product);
 console.log(this.shopService.cartProducts)
 this.main.cartProducts=this.shopService.cartProducts
 this.main.cartNumber=this.main.cartProducts.length
+this.updateCart()
 }
+
+public updateCart(){
+ 
+  this.cartProducts=this.shopService.cartProducts
+  this.shopService.cartTotal()
+  this.subTotal=this.shopService.subTotal
+ 
+}
+
+public  filterProductsCategory (category:String){
+  var selff = this;
+  var myproducts = this.getProducts(function (products:Product[]) {
+    var prods =  selff.products.filter(product => product.category.toLowerCase().trim()==category.toLowerCase().trim()    
+  )
+  selff.products=prods 
+})
+
+
+ 
+}
+
+public  filterProductsBrand (brand:String){
+  var selff = this;
+  var myproducts = this.getProducts(function (products:Product[]) {
+    var prods =  selff.products.filter(product => product.type.toLowerCase().trim()==brand.toLowerCase().trim()    
+  )
+  selff.products=prods 
+})
+
+}
+
+public viewProduct(product:Product){
+  this.shopService.myProduct= product;
+}
+
+
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Cart } from '../Cart';
 import { ShopserviceService } from '../shopservice.service';
 
@@ -24,5 +25,11 @@ export class CheckoutComponent implements OnInit {
     let navs = document.querySelectorAll(".navs");
     navs.forEach(nav=>nav.classList.remove("active"))
     document.querySelector("#navsCheckout").classList.add("active")
+  }
+
+  public processbill (event,form :NgForm) {
+    event.preventDefault()
+    console.log(form)
+
   }
 }

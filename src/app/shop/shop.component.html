@@ -29,14 +29,14 @@
                                     <div *ngFor="let product of products" class="col-6 col-md-4 col-lg-4 col-xl-3">
                                         <div class="product product-7 text-center">
                                             <figure class="product-media" style="max-width:200px; height:200px; flex;background-color:white;align-items:center;">
-                                                <a href="product.html"  >
-                                                    <img src="https://centric-shop-backend.herokuapp.com/content{{product.image}}" alt="Product image" class="product-image">
+                                                <a routerLink="/product"  (click)="viewProduct(product)" >
+                                                    <img src="assets/images/productsimages/{{product.image}}" alt="Product image" class="product-image">
                                                 </a>
 
                                                 <div class="product-action-vertical">
-                                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
-                                                    <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                                                    <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
+                                   
+                                                    <a routerLink="/product"  (click)="viewProduct(product)" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
+                                                    
                                                 </div><!-- End .product-action-vertical -->
 
                                                 <div (click)="addToCart(product)" class="product-action" style="cursor: pointer">
@@ -103,8 +103,8 @@
 										<div class="widget-body">
 											<div class="filter-items filter-items-count">
 												 <div class="category-item" *ngFor="let category of categories" >
-													<div class="custom-contro" >
-														<p >{{category}}</p>
+													<div class="custom-contro" (click)="filterProductsCategory(category)" >
+														<p  >{{category}} </p>
 													</div>
 												
 												</div><!-- End .filter-item -->
@@ -129,7 +129,7 @@
 								
 
 												<div  *ngFor="let brand of brands" class="category-item">
-													<div class="custom-contro">
+													<div class="custom-contro" (click)="filterProductsBrand(brand)">
 													
 														<p >{{brand}}</p>
 													</div><!-- End .custom-checkbox -->
