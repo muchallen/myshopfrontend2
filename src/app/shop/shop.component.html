@@ -48,9 +48,9 @@
                                                 <div class="product-cat">
                                                     <a href="#">{{product.category}}</a>
                                                 </div><!-- End .product-cat -->
-                                                <h3 class="product-title"><a href="product.html">{{product.name}}</a></h3><!-- End .product-title -->
+                                                <h3 class="product-title"><a >{{product.name}}</a></h3><!-- End .product-title -->
                                                 <div class="product-price">
-                                                    ${{product.price}}
+                                                    ${{math.round(product.price*100)/100}}
                                                 </div><!-- End .product-price -->
                                                 <div class="ratings-container">
                                                     <div class="ratings">
