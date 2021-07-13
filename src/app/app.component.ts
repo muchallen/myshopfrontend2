@@ -19,18 +19,19 @@ export class AppComponent implements OnInit{
   constructor(private productService: ShopserviceService){}
 
   ngOnInit(){
-   this.getProducts()
+   this.getProducts(function(){})
     
   }
 
  
 
-  public getProducts(): void{
+  public getProducts(callback): void{
     this.productService.getAllProducts().subscribe(
       (res:Product[])=>{
           this.products = res;
           console.log(this.products);
           this.getProductsCategory()
+          callback();
       },
       (error:HttpErrorResponse)=>{
         console.log(error)
@@ -50,5 +51,14 @@ export class AppComponent implements OnInit{
     })
     
   }
+
+  public  filterProductsCategory (category:String){
+    var selff = this;
+    var myproducts = this.getProducts(function (products:Product[]) {
+      var prods =  selff.products.filter(product => product.category.toLowerCase().trim()==category.toLowerCase().trim()    
+    )
+    selff.products=prods 
+  })
   
+}
 }

@@ -27,9 +27,9 @@ export class CheckoutComponent implements OnInit {
     document.querySelector("#navsCheckout").classList.add("active")
   }
 
-  public processbill (event,form :NgForm) {
-    event.preventDefault()
-    console.log(form)
+  public proccessBill(form :NgForm) {
+    //event.preventDefault()
+    console.log(form.value)
 
   }
 }

@@ -102,9 +102,9 @@
 									<div class="collapse show" id="widget-1">
 										<div class="widget-body">
 											<div class="filter-items filter-items-count">
-												 <div class="category-item" *ngFor="let category of categories" >
-													<div class="custom-contro" (click)="filterProductsCategory(category)" >
-														<p  >{{category}} </p>
+												 <div class="category-item p-0 my-2" (click)="filterProductsCategory($event, category)"  *ngFor="let category of categories" >
+													<div class="custom-contro p-0 m-0" >
+														<p class="cat m-0"  >{{category}} </p>
 													</div>
 												
 												</div><!-- End .filter-item -->
@@ -128,10 +128,10 @@
 											<div class="filter-items">
 								
 
-												<div  *ngFor="let brand of brands" class="category-item">
-													<div class="custom-contro" (click)="filterProductsBrand(brand)">
+												<div  *ngFor="let brand of brands" class="category-item p-0 my-2">
+													<div class="custom-contro p-0 m-0" (click)="filterProductsBrand($event,brand)">
 													
-														<p >{{brand}}</p>
+														<p class="cat" >{{brand}}</p>
 													</div><!-- End .custom-checkbox -->
 												</div><!-- End .filter-item -->
 

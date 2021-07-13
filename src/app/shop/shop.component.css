@@ -6,3 +6,13 @@
     background-color:  #c96;   
     color:white;
 }
+
+.category-item .active{
+    background-color:  #c96;   
+    color:white;
+}
+
+.cat{
+    height:40px;
+    text-justify:auto;
+}

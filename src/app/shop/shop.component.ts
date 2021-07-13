@@ -97,7 +97,11 @@ public updateCart(){
  
 }
 
-public  filterProductsCategory (category:String){
+public  filterProductsCategory (event,category:String){
+  document.querySelectorAll(".cat").forEach(item => {
+    console.log(item)
+    item.classList.remove("active")})
+  event.target.classList.add("active");
   var selff = this;
   var myproducts = this.getProducts(function (products:Product[]) {
     var prods =  selff.products.filter(product => product.category.toLowerCase().trim()==category.toLowerCase().trim()    
@@ -109,7 +113,11 @@ public  filterProductsCategory (category:String){
  
 }
 
-public  filterProductsBrand (brand:String){
+public  filterProductsBrand (event,brand:String){
+  document.querySelectorAll(".cat").forEach(item => {
+    console.log(item)
+    item.classList.remove("active")})
+  event.target.classList.add("active");
   var selff = this;
   var myproducts = this.getProducts(function (products:Product[]) {
     var prods =  selff.products.filter(product => product.type.toLowerCase().trim()==brand.toLowerCase().trim()    
