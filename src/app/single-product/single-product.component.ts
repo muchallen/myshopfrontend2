@@ -12,20 +12,26 @@ import { ShopserviceService } from '../shopservice.service';
 export class SingleProductComponent implements OnInit {
 
   public product: Product;
-  public quantity
+  public quantity = 1
 
   constructor(private shopService: ShopserviceService,private main: AppComponent) { }
   
 
   ngOnInit(): void {
     this.product=this.shopService.myProduct
+    if (null == this.product){
+      location.replace("/shop");
+    }
   }
 
 
-  public addToCart(){     
-          
-    var quantity= Number.parseInt((document.getElementById("qty").value))
-     
+  public addToCart(qty){  
+    
+    
+     var quantity = Number.parseInt(qty.control.value)
+     if (!quantity){
+       quantity=1
+     }
     var cartProd = {...this.product, qty:quantity }
     if(this.shopService.cartProducts.length>0){
       this.shopService.cartProducts.forEach(product=>{
