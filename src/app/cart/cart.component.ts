@@ -51,5 +51,13 @@ constructor(private shopService : ShopserviceService){}
       this.subTotal=this.shopService.subTotal
      
   }
+  public deleteFromCart(product:Cart){
+    var newCart = this.shopService.cartProducts.filter(prod=>prod.code!==product.code);
+    this.shopService.cartProducts= newCart;
+    this.cartProducts= this.shopService.cartProducts
+    this.shopService.cartTotal()
+    this.subTotal=this.shopService.subTotal
+
+  }
  
 }

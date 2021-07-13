@@ -61,4 +61,13 @@ export class AppComponent implements OnInit{
   })
   
 }
+public deleteFromCart(product:Cart){
+
+  var newCart = this.productService.cartProducts.filter(prod=>prod.code!==product.code);
+  this.productService.cartProducts= newCart;
+  this.cartProducts= this.productService.cartProducts
+  this.productService.cartTotal()
+  this.productService=this.productService.subTotal
+
+}
 }

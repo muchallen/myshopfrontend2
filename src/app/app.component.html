@@ -131,7 +131,7 @@
                                                 <img src="assets/images/productsimages/{{product.image}}" alt="product">
                                             </a>
                                         </figure>
-                                        <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
+                                        <a style="cursor:pointer" (click)="deleteFromCart(product)" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
                                     </div><!-- End .product -->
                                 </div><!-- End .cart-product -->
 
